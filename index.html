@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tier List Maker | jakublabs.xyz</title>
+    <link rel="stylesheet" href="styles.css?v=3" />
+  </head>
+  <body>
+    <main class="app" aria-labelledby="page-title">
+      <section class="hero">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>tierlist.jakublabs.xyz</span>
+        </div>
+        <p class="kicker">ranking technology</p>
+        <h1 id="page-title">Tier List Maker</h1>
+        <p class="lede">build a tier list, drag items around, export the image, and share reusable templates</p>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel controls">
+          <div class="section-heading">
+            <p class="kicker">setup</p>
+            <h2>edit list</h2>
+          </div>
+
+          <form id="item-form" class="inline-form">
+            <input id="item-input" type="text" placeholder="Add text item" autocomplete="off" />
+            <button class="button button-light" type="submit">Add Text</button>
+          </form>
+
+          <form id="image-form" class="image-form">
+            <label class="file-picker">
+              <input id="image-input" type="file" accept="image/*" />
+              <span id="image-file-name">Choose Image</span>
+            </label>
+            <button class="button button-light" type="submit">Add Image</button>
+          </form>
+
+          <form id="tier-form" class="inline-form">
+            <input id="tier-input" type="text" placeholder="Add tier" maxlength="16" autocomplete="off" />
+            <button class="button button-dark" type="submit">Tier</button>
+          </form>
+
+          <div class="button-grid">
+            <button class="button button-light" id="export-image" type="button">Export Image</button>
+            <button class="button button-dark" id="copy-template" type="button">Copy Template</button>
+            <button class="button button-dark" id="reset-list" type="button">Reset</button>
+          </div>
+
+          <p class="status" id="status"></p>
+        </aside>
+
+        <section class="panel board-panel">
+          <div class="board-heading">
+            <div>
+              <p class="kicker">tier board</p>
+              <h2 id="board-title">official ranking</h2>
+            </div>
+            <label class="title-field">
+              <span>title</span>
+              <input id="title-input" type="text" value="official ranking" maxlength="42" />
+            </label>
+          </div>
+
+          <div class="tier-board" id="tier-board"></div>
+
+          <div class="item-pool" id="item-pool" aria-label="Unranked items"></div>
+        </section>
+      </section>
+    </main>
+
+    <canvas id="export-canvas" width="1400" height="1600" hidden></canvas>
+    <script src="script.js?v=3"></script>
+  </body>
+</html>
